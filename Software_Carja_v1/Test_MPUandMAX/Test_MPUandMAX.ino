@@ -3,6 +3,9 @@
 #include <Adafruit_Sensor.h>
 #include <MAX30100_PulseOximeter.h>
 
+
+
+
 Adafruit_MPU6050 mpu;
 PulseOximeter pox;
 

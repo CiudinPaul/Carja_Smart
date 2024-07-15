@@ -13,6 +13,8 @@ int dataSize = 300; // Number of data points to display
 int dataIndex = 0;
 boolean bufferFull = false;
 
+
+
 void setup() {
   size(800, 600);
   background(255);
@@ -32,6 +34,8 @@ void setup() {
   spo2Data = new float[dataSize];
 }
 
+
+
 void draw() {
   if (myPort.available() > 0) {
     receivedData = myPort.readStringUntil('\n');
@@ -47,6 +51,9 @@ void draw() {
   // Draw the plots
   drawPlots();
 }
+
+
+
 
 void parseData(String data) {
   try {
@@ -94,6 +101,9 @@ void parseData(String data) {
   }
 }
 
+
+
+
 void drawSensorData(String title, String[] values, float yOffset, int bgColor) {
   buffer.beginDraw();
   buffer.fill(bgColor);
@@ -120,6 +130,9 @@ void drawHRSpO2Data(String[] values, float yOffset, int bgColor) {
   buffer.text("SpO2: " + values[1] + " %", 20, yOffset + 20);
   buffer.endDraw();
 }
+
+
+
 
 void drawPlots() {
   int plotHeight = 100;
